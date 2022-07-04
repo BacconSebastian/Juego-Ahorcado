@@ -277,14 +277,14 @@ srLetras:
 		cmp r11, #0x7a
 		bgt msgNoEsLetra
 
-		cmp r11, #'ñ'
+		cmp r11, #'Ã±'
 		beq comprobarLetraRepetida
 
 		bl comprobarLetraRepetida
 
 	msgNoEsLetra:
 
-		ldr r2,=longitud          /*Tamaño de la cadena*/
+		ldr r2,=longitud          /*TamaÃ±o de la cadena*/
 		ldr r1,=mapa              /*Cargamos en r1 la direccion del mensaje*/
 		bl imprimirString
 
@@ -305,7 +305,7 @@ srLetras:
 		cmp r6, #1                  @ r6 tiene la suma de las veces que la letra ingresada coincidio
 		blt escribirCuerpo          @ Si es menor a 1 nunca coincidio entonces dibujamos cuerpo
 
-		sub r6, r6		    @ Reiniciamos el valor de r6 para una proxima comprobación
+		sub r6, r6		    @ Reiniciamos el valor de r6 para una proxima comprobaciÃ³n
 
 		cmp r3, r4
 		bge pedirLetras
@@ -369,7 +369,7 @@ srLetras:
 
 		pop {r3}
 
-		ldr r2,=longitud          /*Tamaño de la cadena*/
+		ldr r2,=longitud          /*TamaÃ±o de la cadena*/
 		ldr r1,=mapa              /*Cargamos en r1 la direccion del mensaje*/
 		bl imprimirString
 
@@ -405,7 +405,7 @@ srLetras:
 
 		pop {r3}
 
-		ldr r2,=longitud          /*Tamaño de la cadena*/
+		ldr r2,=longitud          /*TamaÃ±o de la cadena*/
 		ldr r1,=mapa              /*Cargamos en r1 la direccion del mensaje*/
 		bl imprimirString
 
@@ -441,7 +441,7 @@ srLetras:
 
 		pop {r3}
 
-		ldr r2,=longitud          /*Tamaño de la cadena*/
+		ldr r2,=longitud          /*TamaÃ±o de la cadena*/
 		ldr r1,=mapa              /*Cargamos en r1 la direccion del mensaje*/
 		bl imprimirString
 
@@ -477,7 +477,7 @@ srLetras:
 
 		pop {r3}
 
-		ldr r2,=longitud          /*Tamaño de la cadena*/
+		ldr r2,=longitud          /*TamaÃ±o de la cadena*/
 		ldr r1,=mapa              /*Cargamos en r1 la direccion del mensaje*/
 		bl imprimirString
 
@@ -513,7 +513,7 @@ srLetras:
 
 		pop {r3}
 
-		ldr r2,=longitud          /*Tamaño de la cadena*/
+		ldr r2,=longitud          /*TamaÃ±o de la cadena*/
 		ldr r1,=mapa              /*Cargamos en r1 la direccion del mensaje*/
 		bl imprimirString
 
@@ -530,11 +530,11 @@ srLetras:
 		cmp r9, #3
 		beq vida1
 
-		add r9, #1                @ Añade 1 al ciclo de pedirLetras
+		add r9, #1                @ AÃ±ade 1 al ciclo de pedirLetras
 
 	@ VIDA EN 4 ESCRIBIR CUERPO
 	vida4:
-		add r9, #1                 @ Añade 1 al ciclo de pedirLetras
+		add r9, #1                 @ AÃ±ade 1 al ciclo de pedirLetras
 
 		sub r0,r0	    	  @ QUITAR UNA VIDA
 		sub r2,r2
@@ -582,7 +582,7 @@ srLetras:
 
 	@ VIDA EN 3 ESCRIBIR CUERPO
 	vida3:
-		add r9, #1                @ Añade 1 al ciclo de pedirLetras
+		add r9, #1                @ AÃ±ade 1 al ciclo de pedirLetras
 		sub r0,r0
 		sub r2,r2
 		sub r3,r3
@@ -648,7 +648,7 @@ srLetras:
 
 	@ VIDA EN 2 ESCRIBIR CUERPO
 	vida2:
-		add r9, #1                @ Añade 1 al ciclo de pedirLetras
+		add r9, #1                @ AÃ±ade 1 al ciclo de pedirLetras
 
 		sub r0,r0		  @ Resta una vida
 		sub r2,r2
@@ -715,7 +715,7 @@ srLetras:
 
 	@ VIDA EN 1 ESCRIBIR CUERPO
 	vida1:
-		add r9, #1                @ Añade 1 al ciclo de pedirLetras
+		add r9, #1                @ AÃ±ade 1 al ciclo de pedirLetras
 
 		sub r0,r0		  @ Resta una vida
 		sub r2,r2
@@ -895,7 +895,7 @@ comprobarLetraRepetida:
 		bl cicloComprobar
 
 	mensajeLetraRepetida:
-		ldr r2,=longitud          /*Tamaño de la cadena*/
+		ldr r2,=longitud          /*TamaÃ±o de la cadena*/
 		ldr r1,=mapa              /*Cargamos en r1 la direccion del mensaje*/
 		bl imprimirString
 
@@ -964,7 +964,7 @@ main:
 	bl limpiarRegistros
 
 		 	          /*imprimo el mapa para empezar*/
-	ldr r2,=longitud          /*Tamaño de la cadena*/
+	ldr r2,=longitud          /*TamaÃ±o de la cadena*/
 	ldr r1,=mapa              /*Cargamos en r1 la direccion del mensaje*/
 	bl imprimirString
 	bl limpiarRegistros
